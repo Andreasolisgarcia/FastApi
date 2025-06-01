@@ -7,6 +7,7 @@ curl -X GET https://jsonplaceholder.typicode.com/posts/1
 # Installer Fast api + uvicorn (serveur de fastapi)
 
 pip3 install fastapi httptools==0.1.* uvloop uvicorn
+pip install fastapi uvicorn[standard]
 
 Une fois que ce fichier est sauvegardé, lancez l'API dans une autre console en exécutant la commande suivante (ou si Si l'API ne tourne plus)
 

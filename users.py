@@ -1,4 +1,11 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import Optional
+
+class User(BaseModel):
+    user_id: int
+    name: str
+    subscription: Optional[str]= None 
 
 users_db = [
     {
@@ -57,3 +64,13 @@ def get_user_suscription(userid):
         return {'subscription': user['subscription']}
     except IndexError:
         return {}
+    
+# PUT /users crée un nouvel utilisateur dans la base de données et renvoie les données de l'utilisateur créé. Les données sur le nouvel utilisateur doivent être fournies dans le corps de la requête.
+@api.put('/users')
+def post_user(user: User):
+    return user
+
+
+# POST /users/userid modifie les données relatives à l'utilisateur identifié par userid et renvoie les données de l'utilisateur modifié. Les données sur l'utilisateur à modifier doivent être fournies dans le corps de la requête
+
+# DELETE /users/userid supprime l'utilisateur désigné par userid et renvoie une confirmation de la suppression.

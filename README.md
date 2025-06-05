@@ -17,3 +17,7 @@ uvicorn fileName:api --reload
 - /docs
 - /redoc
 - /openapi.json
+
+## Les librairies pour donner des types plus complexes à nos données.
+- typing (module BaseModel)
+- pydantic (modules Optional, List)
